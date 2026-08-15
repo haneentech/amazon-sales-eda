@@ -1,8 +1,8 @@
-# Amazon Sales — Digging into the Data (EDA)
+ Amazon Sales — Digging into the Data (EDA)
 
 So, I decided to take a deep dive into this US retail sales dataset (3,203 orders total from 2011 to 2014) to see what story the numbers are actually telling. Before anyone tries to build fancy predictive models or shiny dashboards, you've gotta clean up the mess and figure out what's actually going on under the hood!
 
-## What I Was Trying to Figure Out
+What I Was Trying to Figure Out
 
 Instead of just running summary stats and calling it a day, I wanted to answer some real questions about this business:
 
@@ -13,12 +13,11 @@ Instead of just running summary stats and calling it a day, I wanted to answer s
 5. Are shipping delays hurting the bottom line, or are customers just patient?
 6. What weird data anomalies need to be fixed before we trust any downstream models?
 
-Check out the full Jupyter notebook with code, plots, and random thoughts here: **[`notebooks/EDA.ipynb`](notebooks/EDA.ipynb)**.
+Check out the full Jupyter notebook with code, plots, and random thoughts here: hanintech.blogposy.com 
+The Spilling-the-Tea Section (Key Insights)
 
-## The Spilling-the-Tea Section (Key Insights)
+ What the Data Said | What We Should Probably Do About It 
 
-| # | What the Data Said | What We Should Probably Do About It |
-| --- | --- | --- |
 | 1 | **California carries the entire team.** 63% of total sales came from CA alone ($457K out of $725K). | Maybe don't put all our eggs in one state? Let's try expanding elsewhere. |
 | 2 | **High sales != high profit.** Tables & Machines sell like crazy but barely make a dime. Copiers bring in almost zero volume but printing money. | Fix the pricing strategy on low-margin products before we keep selling them at a loss. |
 | 3 | **About 10% of orders straight up lost money.** Mostly cheap/mid-tier items given too big of a discount. | Cap discount percentages on cheaper stuff so we stop paying people to take our inventory. |
@@ -26,11 +25,11 @@ Check out the full Jupyter notebook with code, plots, and random thoughts here: 
 | 5 | **40% of orders were delayed.** But interestingly, delay times have basically zero correlation with profit (r = -0.03). | Still bad for customer satisfaction, but at least it's not directly shrinking margins! |
 | 6 | **Found an absolute nightmare outlier.** One order lost $3,400 on a $2,500 sale... excuse me, *how*? | Exclude/audit this record before it ruins any ML pricing model. |
 
-## Visual Highlights
+ Visual Highlights
 
 See `images/` for the full set — region breakdown, category profit vs. sales, monthly trend, and the correlation matrix are the ones worth a look first.
 
-## The Data Breakdown
+ The Data Breakdown
 
 | Field | What it is |
 | --- | --- |
@@ -42,7 +41,7 @@ See `images/` for the full set — region breakdown, category profit vs. sales, 
 
 Quick specs: 3,203 rows, 13 original features (boosted to 17 after engineering new features). Clean dataset, zero missing values, purely US orders.
 
-## My Workflow
+ My Workflow
 
 - **Data Cleaning & Logic Checks:** Checked data types, null values, and made sure `Ship Date` didn't somehow happen *before* `Order Date` (time travel isn't supported yet).
 - **Feature Engineering:** Calculated `Ship Delay (days)`, `Profit Margin (%)`, and extracted order months for trend analysis.
@@ -51,7 +50,7 @@ Quick specs: 3,203 rows, 13 original features (boosted to 17 after engineering n
 - **Time Series:** Aggregated monthly sales to catch seasonal trends.
 - **Outlier Hunting:** Flagged rogue transactions that were skewing the metrics.
 
-## How This Repo is Set Up
+How This Repo is Set Up
 
 ```
 amazon-sales-eda/
@@ -67,7 +66,7 @@ amazon-sales-eda/
     └── eda_analysis.py          # python script if you prefer CLI
 ```
 
-## How to Run It Yourself
+How to Run It Yourself
 
 First, clone the repo and grab the packages:
 
@@ -83,8 +82,9 @@ Or just run the Python script to dump all the newly generated charts straight in
 ```bash
 python src/eda_analysis.py
 ```
+if it doesn't work hit me up on my blog post 
 
-## Tools & Libraries Used
+Tools & Libraries Used its all free by the way for the broke ppl out there 
 
 - **Python 3.11**
 - **pandas & numpy** — for data manipulation
