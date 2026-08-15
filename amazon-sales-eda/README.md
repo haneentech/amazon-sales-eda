@@ -82,6 +82,8 @@ Or just run the Python script to dump all the newly generated charts straight in
 ```bash
 python src/eda_analysis.py
 ```
+but if you only want to check it out 
+```press notebooks/EDA.ipynb```
 if it doesn't work hit me up on my blog post 
 
 Tools & Libraries Used its all free by the way for the broke ppl out there 
